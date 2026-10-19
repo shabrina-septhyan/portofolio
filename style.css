@@ -1,0 +1,225 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7ff;
+}
+
+/* Navbar */
+
+.navbar{
+
+    width:100%;
+
+    position:fixed;
+
+    top:0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 80px;
+
+    background:white;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    z-index:1000;
+
+}
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#2563EB;
+
+}
+
+.logo span{
+
+    color:#60A5FA;
+
+}
+
+.menu{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:40px;
+
+}
+
+.menu a{
+
+    text-decoration:none;
+
+    color:#333;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.menu a:hover{
+
+    color:#2563EB;
+
+}
+
+/* Hero */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:120px 80px;
+
+}
+
+.hero-text{
+
+    width:55%;
+
+}
+
+.hello{
+
+    color:#2563EB;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+}
+
+.hero h1{
+
+    font-size:70px;
+
+    color:#111827;
+
+}
+
+.hero h2{
+
+    color:#2563EB;
+
+    margin:10px 0;
+
+    font-size:35px;
+
+    min-height:45px;
+
+}
+
+.desc{
+
+    color:#555;
+
+    line-height:30px;
+
+    margin:25px 0;
+
+    max-width:550px;
+
+}
+
+.button{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.btn-primary{
+
+    background:#2563EB;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 35px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.btn-secondary{
+
+    border:2px solid #2563EB;
+
+    color:#2563EB;
+
+    text-decoration:none;
+
+    padding:15px 35px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.btn-secondary:hover{
+
+    background:#2563EB;
+
+    color:white;
+
+}
+
+.hero-image{
+
+    width:40%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-image img{
+
+    width:360px;
+
+    border-radius:50%;
+
+    box-shadow:0 20px 40px rgba(37,99,235,.3);
+
+}
+/* Class untuk Latar Belakang Polkadot Hitam di atas Krem */
+.bg-polkadot {
+    background-color: #f3f0e6; /* Warna Krem/Cream dasar */
+    background-image: radial-gradient(#1c2826 1.5px, transparent 1.5px); /* Bintik hitam */
+    background-size: 24px 24px; /* Jarak antar bintik */
+}

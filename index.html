@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shabrina Septhyan | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        popPink: '#234e3e',       /* Deep Forest Green */
+                        softPink: '#e8a1b2',      /* Soft Pink */
+                        creamBg: '#f8f6f0',       /* Cream Background */
+                        darkText: '#1c2826',
+                    },
+                    fontFamily: {
+                        display: ['"Syne"', 'sans-serif'],
+                        script: ['"Alex Brush"', 'cursive'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .bg-polkadot-header {
+            background-color: #f8f6f0;
+            background-image: radial-gradient(#1c2826 1.8px, transparent 1.8px);
+            background-size: 22px 22px;
+        }
+
+        .bg-polkadot-pink {
+            background-color: #e8a1b2;
+            background-image: radial-gradient(#234e3e 1.5px, transparent 1.5px);
+            background-size: 20px 20px;
+        }
+
+        .watermark-text-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-around;
+            opacity: 0.35;
+            pointer-events: none;
+            user-select: none;
+            z-index: 1;
+        }
+
+        .watermark-item {
+            font-family: 'Alex Brush', cursive;
+            font-size: 5.5rem;
+            color: #234e3e; 
+            transform: rotate(-12deg);
+            white-space: nowrap;
+            margin: 10px 20px;
+        }
+
+        /* Styles Card Carousel 3D */
+        .carousel-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: absolute;
+        }
+
+        .carousel-card.active {
+            transform: translateX(0) scale(1);
+            z-index: 30;
+            opacity: 1;
+            filter: blur(0px);
+        }
+
+        .carousel-card.prev {
+            transform: translateX(-65%) scale(0.82);
+            z-index: 10;
+            opacity: 0.45;
+            filter: blur(1px);
+            cursor: pointer;
+        }
+
+        .carousel-card.next {
+            transform: translateX(65%) scale(0.82);
+            z-index: 10;
+            opacity: 0.45;
+            filter: blur(1px);
+            cursor: pointer;
+        }
+
+        .carousel-card.hidden-card {
+            transform: translateX(0) scale(0.5);
+            z-index: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-creamBg text-darkText font-sans antialiased min-h-screen p-4 md:p-8">
+
+    <main class="max-w-2xl mx-auto shadow-2xl rounded-3xl overflow-hidden border border-popPink/20 bg-creamBg">
+
+        <!-- ==================== HEADER KARTU ==================== -->
+        <section class="bg-polkadot-header p-6 md:p-10 text-center relative overflow-hidden border-b border-popPink/20">
+            <div class="watermark-text-bg">
+                <span class="watermark-item">Shabrina</span>
+                <span class="watermark-item">Shabrina</span>
+                <span class="watermark-item">Shabrina</span>
+                <span class="watermark-item">Shabrina</span>
+            </div>
+
+            <div class="bg-white/30 backdrop-blur-md p-6 md:p-8 rounded-3xl border border-popPink/30 shadow-lg max-w-xl mx-auto relative z-10 space-y-6">
+                <div class="flex justify-between items-center text-[10px] uppercase font-bold tracking-widest text-popPink">
+                    <span>SHABRINA SEPTHYAN | RPL</span>
+                    <span class="font-script text-2xl font-normal lowercase text-popPink">shabrina</span>
+                    <span>2026 PORTFOLIO</span>
+                </div>
+
+                <div class="relative z-10 my-2">
+                    <h1 class="font-display text-4xl sm:text-5xl font-extrabold uppercase tracking-tight leading-none text-popPink py-1">
+                        PORTFOLIO<br>CREATIVE
+                    </h1>
+                </div>
+
+                <div class="flex justify-center gap-2 text-[10px] font-semibold mt-4">
+                    <span class="border border-popPink/40 text-popPink px-4 py-1.5 rounded-full uppercase bg-white/40 backdrop-blur-sm">
+                        FULL-STACK DEVELOPER
+                    </span>
+                    <span class="border border-popPink/40 text-popPink px-4 py-1.5 rounded-full uppercase bg-white/40 backdrop-blur-sm">
+                        UI/UX DESIGNER
+                    </span>
+                </div>
+
+                <div class="text-[9px] uppercase tracking-widest text-popPink/80 mt-6 pt-3 border-t border-popPink/20 font-bold">
+                    SHABRINA SEPTHYAN ✦ CREATIVE WORKS
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================== HALAMAN 1: HOME PAGE ==================== -->
+        <div id="pageHome">
+            <section class="bg-popPink text-creamBg p-8 md:p-10 relative">
+                <div class="flex justify-between items-center text-[10px] text-softPink font-bold uppercase tracking-wider mb-8">
+                    <span>SHABRINA SEPTHYAN | RPL</span>
+                    <span class="font-script text-2xl lowercase text-softPink">shabrina</span>
+                    <span>2026</span>
+                </div>
+
+                <div class="grid md:grid-cols-12 gap-6 items-center">
+                    <div class="md:col-span-5 flex justify-center relative">
+                        <div class="w-48 h-72 -translate-y-3 bg-creamBg p-2.5 rounded-2xl border-2 border-softPink shadow-lg rotate-[-2deg] hover:rotate-0 transition duration-300">
+                            <div class="w-full h-56 overflow-hidden rounded-xl bg-slate-100">
+                                <img src="./assets/foto_profile.jpeg" alt="Foto profil Shabrina Septhyan" class="w-full h-full object-cover">
+                            </div>
+                            <span class="font-script text-popPink text-center block text-sm mt-1">xoxo, Shabrina</span>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-7 space-y-3">
+                        <div class="relative">
+                            <h2 class="font-script text-4xl text-softPink leading-none drop-shadow-md">Hi, I'm Shabrina...</h2>
+                            <span class="font-display text-xs font-bold uppercase text-creamBg block mt-1">Software Engineering Student</span>
+                        </div>
+
+                        <p class="text-xs text-creamBg leading-relaxed font-normal">
+                            Halo! Aku <strong class="text-softPink">Shabrina Septhyan</strong>, siswi Rekayasa Perangkat Lunak (RPL) di SMK Telkom Malang. Berfokus pada pengembangan aplikasi web dan mobile yang fungsional, terstruktur, dan berorientasi pada pengguna.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-creamBg p-8 md:p-10 text-popPink relative border-t border-popPink/10">
+                <span class="absolute top-4 right-6 text-softPink text-4xl">✦</span>
+                
+                <div class="max-w-lg mx-auto text-center space-y-4">
+                    <h3 class="font-display text-xl font-bold uppercase tracking-wide border-b border-popPink/20 pb-2 text-popPink">
+                        Skills & Passion
+                    </h3>
+                    <p class="text-xs leading-relaxed text-darkText/80">
+                        Menguasai alur pengembangan software dari perancangan UI/UX, database relasional, hingga penyusunan logika frontend dan backend.
+                    </p>
+
+                    <div class="flex flex-wrap justify-center gap-2 pt-2 text-[11px] font-bold">
+                        <span class="bg-popPink text-creamBg px-3 py-1 rounded-full shadow-sm">Flutter</span>
+                        <span class="bg-popPink text-creamBg px-3 py-1 rounded-full shadow-sm">HTML / CSS</span>
+                        <span class="bg-popPink text-creamBg px-3 py-1 rounded-full shadow-sm">JavaScript</span>
+                        <span class="bg-popPink text-creamBg px-3 py-1 rounded-full shadow-sm">Figma</span>
+                        <span class="bg-popPink text-creamBg px-3 py-1 rounded-full shadow-sm">Postman</span>
+                        <span class="bg-popPink text-creamBg px-3 py-1 rounded-full shadow-sm">SQL</span>
+                        <span class="bg-popPink text-creamBg px-3 py-1 rounded-full shadow-sm">Git & GitHub</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-polkadot-pink p-8 md:p-10 text-darkBrown space-y-6 text-center border-t border-popPink/10">
+                <div class="bg-white/40 backdrop-blur-sm p-4 rounded-2xl max-w-sm mx-auto border border-popPink/20 shadow-md relative z-10">
+                    <h2 class="font-display text-2xl font-extrabold uppercase text-popPink leading-none">
+                        SELECT A CATEGORY ✦
+                    </h2>
+                    <p class="text-[11px] text-popPink/90 font-semibold mt-1">Pilih halaman yang ingin kamu buka:</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-lg mx-auto pt-2 relative z-10">
+                    <div onclick="navigateTo('projects')" class="bg-creamBg p-6 rounded-3xl border-2 border-popPink text-center space-y-3 cursor-pointer hover:scale-105 hover:bg-white hover:shadow-xl transition-all duration-300 group shadow-md">
+                        <div class="w-14 h-14 bg-popPink text-creamBg text-2xl rounded-2xl flex items-center justify-center mx-auto group-hover:rotate-6 transition">
+                            🚀
+                        </div>
+                        <div>
+                            <h3 class="font-display text-lg font-bold text-popPink uppercase">My Projects</h3>
+                            <p class="text-[10px] text-popPink/80 mt-1">Masuk ke Halaman Proyek & Aplikasi.</p>
+                        </div>
+                        <span class="inline-block bg-popPink/10 text-popPink font-bold text-[10px] px-3 py-1 rounded-full uppercase group-hover:bg-popPink group-hover:text-creamBg transition">
+                            Buka Projects ➔
+                        </span>
+                    </div>
+
+                    <div onclick="navigateTo('sertifikat')" class="bg-creamBg p-6 rounded-3xl border-2 border-popPink text-center space-y-3 cursor-pointer hover:scale-105 hover:bg-white hover:shadow-xl transition-all duration-300 group shadow-md">
+                        <div class="w-14 h-14 bg-softPink text-popPink text-2xl rounded-2xl flex items-center justify-center mx-auto group-hover:-rotate-6 transition">
+                            📜
+                        </div>
+                        <div>
+                            <h3 class="font-display text-lg font-bold text-popPink uppercase">Sertifikasi</h3>
+                            <p class="text-[10px] text-popPink/80 mt-1">Masuk ke Halaman Foto-Foto Sertifikat.</p>
+                        </div>
+                        <span class="inline-block bg-popPink/10 text-popPink font-bold text-[10px] px-3 py-1 rounded-full uppercase group-hover:bg-popPink group-hover:text-creamBg transition">
+                            Buka Sertifikat ➔
+                        </span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ==================== HALAMAN 2: KHUSUS PROJECTS ==================== -->
+        <div id="pageProjects" class="hidden">
+            <section class="bg-popPink p-8 md:p-10 text-creamBg space-y-6">
+                
+                <div class="flex justify-between items-center border-b border-creamBg/20 pb-4 relative z-10">
+                    <div>
+                        <h2 class="font-display text-2xl font-extrabold uppercase text-creamBg leading-none">PROJECTS PAGE ✦</h2>
+                        <p class="text-xs text-creamBg/90 font-semibold mt-1">Klik pada nama project untuk melihat detailnya</p>
+                    </div>
+                    <button onclick="navigateTo('home')" class="bg-creamBg text-popPink font-bold text-xs px-3 py-2 rounded-full hover:bg-white transition shadow-md">
+                        ← Kembali
+                    </button>
+                </div>
+
+                <div class="space-y-3 relative z-10">
+                    <div onclick="openModal('project1')" class="bg-creamBg p-4 rounded-2xl shadow-sm border border-creamBg/20 flex justify-between items-center hover:scale-[1.01] transition cursor-pointer group">
+                        <div>
+                            <span class="text-[9px] font-bold bg-popPink text-creamBg px-2 py-0.5 rounded-full uppercase">Full-Stack & UI/UX</span>
+                            <h4 class="font-display text-sm font-bold text-popPink mt-1 group-hover:text-softPink transition">E-Commerce Jual Beli Barang</h4>
+                            <p class="text-[10px] text-popPink/70">Aplikasi jual beli online dengan simulasi stok & transaksi.</p>
+                        </div>
+                        <span class="text-popPink text-xl font-bold group-hover:translate-x-1 transition">➔</span>
+                    </div>
+
+                    <div onclick="openModal('project2')" class="bg-creamBg p-4 rounded-2xl shadow-sm border border-creamBg/20 flex justify-between items-center hover:scale-[1.01] transition cursor-pointer group">
+                        <div>
+                            <span class="text-[9px] font-bold bg-popPink text-creamBg px-2 py-0.5 rounded-full uppercase">Web Dev</span>
+                            <h4 class="font-display text-sm font-bold text-popPink mt-1 group-hover:text-softPink transition">Website Layanan Kesehatan (MIC)</h4>
+                            <p class="text-[10px] text-popPink/70">Platform akses informasi kesehatan makanan untuk publik.</p>
+                        </div>
+                        <span class="text-popPink text-xl font-bold group-hover:translate-x-1 transition">➔</span>
+                    </div>
+
+                    <div onclick="openModal('project3')" class="bg-creamBg p-4 rounded-2xl shadow-sm border border-creamBg/20 flex justify-between items-center hover:scale-[1.01] transition cursor-pointer group">
+                        <div>
+                            <span class="text-[9px] font-bold bg-popPink text-creamBg px-2 py-0.5 rounded-full uppercase">Full-Stack</span>
+                            <h4 class="font-display text-sm font-bold text-popPink mt-1 group-hover:text-softPink transition">Aplikasi Pembayaran PDAM (UKL)</h4>
+                            <p class="text-[10px] text-popPink/70">Simulasi kalkulasi tagihan air pelanggan & pencatatan digital.</p>
+                        </div>
+                        <span class="text-popPink text-xl font-bold group-hover:translate-x-1 transition">➔</span>
+                    </div>
+
+                    <div onclick="openModal('project4')" class="bg-creamBg p-4 rounded-2xl shadow-sm border border-creamBg/20 flex justify-between items-center hover:scale-[1.01] transition cursor-pointer group">
+                        <div>
+                            <span class="text-[9px] font-bold bg-popPink text-creamBg px-2 py-0.5 rounded-full uppercase">Mobile UI/UX & Frontend</span>
+                            <h4 class="font-display text-sm font-bold text-popPink mt-1 group-hover:text-softPink transition">FixNow - On-Demand Layanan Jasa</h4>
+                            <p class="text-[10px] text-popPink/70">Aplikasi pemanggilan teknisi & tukang rumah tangga secara instan.</p>
+                        </div>
+                        <span class="text-popPink text-xl font-bold group-hover:translate-x-1 transition">➔</span>
+                    </div>
+
+                    <div onclick="openModal('project5')" class="bg-creamBg p-4 rounded-2xl shadow-sm border border-creamBg/20 flex justify-between items-center hover:scale-[1.01] transition cursor-pointer group">
+                        <div>
+                            <span class="text-[9px] font-bold bg-popPink text-creamBg px-2 py-0.5 rounded-full uppercase">Mobile UI/UX</span>
+                            <h4 class="font-display text-sm font-bold text-popPink mt-1 group-hover:text-softPink transition">DagangYuk - Aplikasi Jual Beli</h4>
+                            <p class="text-[10px] text-popPink/70">Marketplace dengan tampilan khusus untuk penjual dan pembeli.</p>
+                        </div>
+                        <span class="text-popPink text-xl font-bold group-hover:translate-x-1 transition">➔</span>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+
+        <!-- ==================== HALAMAN 3: KHUSUS SERTIFIKASI ==================== -->
+        <div id="pageSertifikat" class="hidden">
+            <section class="bg-creamBg p-8 md:p-10 text-popPink space-y-6 border-t border-popPink/10">
+                <div class="flex justify-between items-center border-b border-popPink/20 pb-4 relative z-10">
+                    <div>
+                        <h2 class="font-display text-2xl font-extrabold uppercase text-popPink leading-none">CERTIFICATION PAGE ✦</h2>
+                        <p class="text-[10px] text-popPink/90 font-semibold mt-1">Daftar kelulusan, lisensi, dan piagam penghargaan</p>
+                    </div>
+                    <button onclick="navigateTo('home')" class="bg-popPink text-creamBg font-bold text-xs px-3 py-2 rounded-full hover:bg-softPink hover:text-popPink transition shadow-md">
+                        ← Kembali
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
+                    <div class="bg-white p-4 rounded-3xl border border-popPink/20 shadow-sm hover:shadow-lg transition space-y-3">
+                        <div class="h-44 bg-slate-100 rounded-2xl overflow-hidden border border-popPink/10 relative group cursor-pointer" onclick="openCarouselModal(['./assets/sertifikatCodincamp.png'], 0)">
+                            <img src="./assets/sertifikatCodincamp.png" alt="Sertifikat Coding Camp RevoU" class="w-full h-full object-contain group-hover:scale-105 transition duration-300">
+                            <div class="absolute inset-0 bg-popPink/30 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-bold text-xs transition">
+                                🔍 Klik Zoom
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-[9px] font-bold bg-popPink text-creamBg px-2 py-0.5 rounded-full uppercase">Pelatihan</span>
+                            <h4 class="font-display text-sm font-bold text-popPink mt-1">Coding Camp RevoU</h4>
+                            <p class="text-[11px] text-popPink/70 mt-0.5">Intro to Software Engineering, program online selama satu minggu.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-3xl border border-popPink/20 shadow-sm hover:shadow-lg transition space-y-3">
+                        <div class="h-44 bg-slate-100 rounded-2xl overflow-hidden border border-popPink/10 relative group cursor-pointer" onclick="openCarouselModal(['./assets/sertifikat_informatics.jpeg'], 0)">
+                            <img src="./assets/sertifikat_informatics.jpeg" alt="Sertifikat Informatics Event 2.0" class="w-full h-full object-contain group-hover:scale-105 transition duration-300">
+                            <div class="absolute inset-0 bg-popPink/30 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-bold text-xs transition">
+                                🔍 Klik Zoom
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-[9px] font-bold bg-popPink text-creamBg px-2 py-0.5 rounded-full uppercase">Kompetisi</span>
+                            <h4 class="font-display text-sm font-bold text-popPink mt-1">Informatics Event 2.0</h4>
+                            <p class="text-[11px] text-popPink/70 mt-0.5">Sertifikat peserta lomba Web Development, 26 September 2026.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-3xl border border-popPink/20 shadow-sm hover:shadow-lg transition space-y-3">
+                        <div class="h-44 bg-slate-100 rounded-2xl overflow-hidden border border-popPink/10 relative group cursor-pointer" onclick="openCarouselModal(['./assets/sertifikat_innvonture.jpeg'], 0)">
+                            <img src="./assets/sertifikat_innvonture.jpeg" alt="Sertifikat InnoVenture Chapter II" class="w-full h-full object-contain group-hover:scale-105 transition duration-300">
+                            <div class="absolute inset-0 bg-popPink/30 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-bold text-xs transition">
+                                🔍 Klik Zoom
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-[9px] font-bold bg-popPink text-creamBg px-2 py-0.5 rounded-full uppercase">Kompetisi</span>
+                            <h4 class="font-display text-sm font-bold text-popPink mt-1">InnoVenture - Chapter II</h4>
+                            <p class="text-[11px] text-popPink/70 mt-0.5">Sertifikat partisipasi lomba Web Development di Bandung.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-3xl border border-popPink/20 shadow-sm hover:shadow-lg transition space-y-3">
+                        <div class="h-44 bg-slate-100 rounded-2xl overflow-hidden border border-popPink/10 relative group cursor-pointer" onclick="openCarouselModal(['./assets/sertifikat_kompetensi.jpg'], 0)">
+                            <img src="./assets/sertifikat_kompetensi.jpg" alt="Sertifikat Kompetensi UKK Flutter" class="w-full h-full object-contain group-hover:scale-105 transition duration-300">
+                            <div class="absolute inset-0 bg-popPink/30 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-bold text-xs transition">
+                                🔍 Klik Zoom
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-[9px] font-bold bg-popPink text-creamBg px-2 py-0.5 rounded-full uppercase">Kompetensi</span>
+                            <h4 class="font-display text-sm font-bold text-popPink mt-1">Sertifikat Kompetensi UKK</h4>
+                            <p class="text-[11px] text-popPink/70 mt-0.5">Uji Unit Kompetensi pengembangan aplikasi mobile Flutter, predikat Kompeten.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- FOOTER -->
+        <section class="bg-creamBg p-8 md:p-10 border-t border-popPink/10">
+            <div class="bg-popPink p-6 rounded-3xl text-creamBg text-center space-y-4 relative overflow-hidden shadow-lg">
+                <span class="absolute top-2 left-4 text-softPink text-2xl">✦</span>
+                <span class="absolute bottom-2 right-4 text-softPink text-2xl">✦</span>
+
+                <h3 class="font-display text-lg font-bold text-softPink uppercase">Let's Connect!</h3>
+                <p class="text-xs text-creamBg/90">Tertarik untuk berkolaborasi atau ingin melihat lebih banyak karya saya?</p>
+
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-3 text-xs font-bold pt-2">
+                    <a href="mailto:shabrina.septhyan@gmail.com" class="bg-softPink text-popPink px-5 py-2.5 rounded-full shadow hover:bg-creamBg transition">
+                        ✉ Email Me
+                    </a>
+                    <a href="https://github.com/shabrina-septhyan" target="_blank" class="bg-creamBg text-popPink px-5 py-2.5 rounded-full shadow hover:bg-softPink transition">
+                        💻 GitHub Profile
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center text-[10px] text-popPink/60 font-bold uppercase tracking-widest pt-8">
+                &copy; 2026 Shabrina Septhyan ✦ Creative Portfolio
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ==================== MODAL DETAIL PROJECT ==================== -->
+    <div id="projectModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden flex items-center justify-center p-4">
+        <div class="bg-creamBg rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 border-2 border-popPink shadow-2xl relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 bg-softPink text-popPink w-8 h-8 rounded-full font-bold text-sm hover:bg-popPink hover:text-creamBg transition z-10">
+                ✕
+            </button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+
+    <!-- ==================== MODAL POP-UP CARD CAROUSEL 3D ==================== -->
+    <div id="carouselModal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex flex-col items-center justify-center p-4 overflow-hidden">
+        <!-- Close Button -->
+        <button onclick="closeCarouselModal()" class="absolute top-6 right-6 text-white bg-white/20 hover:bg-softPink hover:text-popPink w-10 h-10 rounded-full font-bold text-xl transition flex items-center justify-center z-50">
+            ✕
+        </button>
+
+        <!-- Dynamic Role Switcher (Pop-Up) jika project punya multi-role -->
+        <div id="carouselRoleTab" class="z-50 mb-3 flex gap-2"></div>
+
+        <!-- Carousel Stage -->
+        <div class="relative w-full max-w-3xl h-[480px] flex items-center justify-center">
+            <!-- Navigation Left -->
+            <button id="carouselPrevBtn" onclick="prevCarousel()" class="absolute left-2 md:left-6 bg-white/20 hover:bg-softPink text-white hover:text-popPink w-12 h-12 rounded-full font-bold text-2xl transition flex items-center justify-center z-40 shadow-lg">
+                ‹
+            </button>
+
+            <!-- Card Items Track Container -->
+            <div id="carouselTrack" class="relative w-full h-full flex items-center justify-center">
+                <!-- Dynamic Cards -->
+            </div>
+
+            <!-- Navigation Right -->
+            <button id="carouselNextBtn" onclick="nextCarousel()" class="absolute right-2 md:right-6 bg-white/20 hover:bg-softPink text-white hover:text-popPink w-12 h-12 rounded-full font-bold text-2xl transition flex items-center justify-center z-40 shadow-lg">
+                ›
+            </button>
+        </div>
+
+        <!-- Indicator Counter Badge -->
+        <div id="carouselCounter" class="text-white/90 text-xs font-semibold mt-2 bg-white/10 px-5 py-1.5 rounded-full backdrop-blur-sm shadow-inner">
+            1 / 1
+        </div>
+    </div>
+
+
+    <script>
+        const projectsData = {
+            project1: {
+                title: "Aplikasi E-Commerce Jual Beli Barang",
+                category: "Project Pembelajaran Kelas",
+                role: "Full-Stack Developer & UI/UX Designer",
+                tools: "Figma, Flutter, Postman, Git & GitHub",
+                images: ["./assets/ecommerce1.png", "./assets/ecommerce2.png"],
+                desc: "Aplikasi e-commerce yang dirancang untuk memfasilitasi proses jual beli barang secara online sebagai bagian dari project pembelajaran kelas di jurusan RPL. Platform ini menyediakan dua hak akses utama, yaitu sisi User untuk menjelajahi produk dan melakukan transaksi, serta sisi Admin untuk manajemen stok barang dan pengawasan data penjualan.",
+                challenge: "Membangun sistem otentikasi (login) dan hak akses terpisah antara Admin and User, serta memastikan sinkronisasi data stok barang tetap akurat saat terjadi transaksi simulasi pembelian.",
+                solution: "Merancang arsitektur basis data relasional yang efisien di Postman, mengimplementasikan logika session handling di sisi backend, serta membuat alur UI/UX yang intuitif di Figma sebelum melakukan coding.",
+                impact: "Berhasil menyelesaikan aplikasi fungsional dengan fitur manajemen produk and transaksi yang berjalan lancar, serta memenuhi kriteria nilai kelulusan tugas praktik pemrograman kelas.",
+                link: "https://github.com/shabrina-septhyan/tugas1"
+            },
+            project2: {
+                title: "Website Layanan Kesehatan (MIC)",
+                category: "Moklet Idea Challenge",
+                role: "Web Developer & Team Member",
+                tools: "HTML, CSS, Figma, GitHub",
+                images: ["./assets/mic.png"],
+                desc: "Platform berbasis web bertema kesehatan yang dirancang untuk mempermudah masyarakat dalam mengakses informasi kesehatan makanan secara cepat. Proyek ini dibangun secara kolaboratif dalam tim guna mengikuti ajang kompetisi inovasi sekolah.",
+                challenge: "Mengintegrasikan ide-ide inovatif dari seluruh anggota tim ke dalam alur antarmuka (User Interface) website agar tetap ramah bagi pengguna awam di bawah tenggat waktu kompetisi yang ketat.",
+                solution: "Mengadakan koordinasi intensif antar-anggota tim untuk membagi fokus pengerjaan fitur utama, mendesain wireframe yang bersih di Figma, serta menyusun struktur navigasi web yang sederhana dan informatif.",
+                impact: "Berhasil merampungkan prototipe fungsional website layanan kesehatan tepat waktu dan sukses mempresentasikan inovasi produk digital tersebut di hadapan para juri kompetisi MIC.",
+                link: "https://github.com/shabrina-septhyan"
+            },
+            project3: {
+                title: "Aplikasi Sistem Pembayaran PDAM",
+                category: "Ujian Kenaikan Level (UKL)",
+                role: "Full-Stack Developer & UI/UX Designer",
+                tools: "Figma, Postman, GitHub, SQL",
+                roles: {
+                    customer: [
+                        "./assets/splash_pdam.png",
+                        "./assets/register_akun baru.png",
+                        "./assets/profilcus_pdam.png",
+                        "./assets/Login_pdam .png",
+                        "./assets/dashboard_customer_pdam.png",
+                        "./assets/Tagihan1_pdam.png",
+                        "./assets/Tagihan2_pdam.png",
+                        "./assets/Tagihan3_pdam.png",
+                        "./assets/Tagihan4_pdam.png"
+                    ],
+                    admin: [
+                        "./assets/splash_pdam.png",
+                        "./assets/register_akun baru.png",
+                        "./assets/profile_admin.png",
+                        "./assets/Login_pdam .png",
+                        "./assets/Dashboard Admin.png",
+                        "./assets/kelola_customer_pda,m.png",
+                        "./assets/kelola_layanan_pdam.png",
+                        "./assets/kelolabilll_pdam.png",
+                        "./assets/verifikasi_pembayaran_pdam.png",
+                        "./assets/pembayaran_berhasil_pdam.png"
+                    ]
+                },
+                desc: "Aplikasi simulasi transaksi digital yang dibangun untuk mempermudah proses pencatatan dan pembayaran tagihan air pelanggan PDAM secara online. Aplikasi ini dikembangkan sebagai syarat kelulusan uji kompetensi internal (Ujian Kenaikan Level) di jurusan RPL.",
+                challenge: "Harus menangani seluruh proses pembuatan aplikasi sendirian (full-stack), mulai dari mendesain tampilan visual yang menarik hingga menghubungkan logika backend dengan basis data secara akurat agar data transaksi tidak salah hitung.",
+                solution: "Memanfaatkan Figma untuk mematangkan wireframe UI/UX terlebih dahulu sebelum masuk ke tahap coding, serta melakukan pengujian database secara bertahap menggunakan query SQL untuk memastikan kalkulasi tagihan air berjalan tanpa galat.",
+                impact: "Aplikasi berhasil diselesaikan dengan fitur frontend dan backend yang terintegrasi penuh, serta dinyatakan lulus dalam Ujian Kenaikan Level (UKL) sekolah dengan nilai yang memuaskan.",
+                link: "https://github.com/shabrina-septhyan/ukl1_semester2.git"
+            },
+            project4: {
+                title: "FixNow - On-Demand Layanan Pemanggilan Teknisi",
+                category: "Layanan Jasa Rumah Tangga",
+                role: "Mobile UI/UX Designer & Frontend Developer",
+                tools: "Figma, Flutter, Dart, Postman",
+                images: [
+                    "./assets/layanan_kik.png",
+                    "./assets/detai_layanan_kik.png"
+                ],
+                desc: "Sebuah aplikasi mobile yang dirancang untuk mempermudah pengguna menemukan dan memesan berbagai layanan teknisi atau tukang profesional (seperti Service AC, Listrik, Elektronik, hingga Cleaning Service) secara instan. Aplikasi ini menyediakan halaman eksplorasi layanan berbasis kategori serta detail informasi transparansi harga, ulasan, dan status verifikasi penyedia jasa.",
+                challenge: "Menyusun informasi yang padat (seperti nama layanan, rating, harga mulai dari, dan deskripsi syarat garansi) agar tetap terlihat bersih, minimalis, dan mudah dipahami oleh pengguna di layar ponsel yang terbatas.",
+                solution: "Merancang desain antarmuka dengan sistem kartu (card layout) yang terstruktur, memanfaatkan ikon navigasi bawah (bottom navigation bar) yang intuitif, serta memberikan penekanan warna kontras pada tombol Call to Action utama seperti 'Pesan Sekarang'.",
+                impact: "Berhasil merancang dan membangun high-fidelity prototype aplikasi pemesanan jasa yang interaktif dengan total 6+ kategori layanan utama yang siap diintegrasikan ke sistem backend.",
+                link: "https://github.com/zahranuraulia/fixnow-app"
+            },
+            project5: {
+                title: "DagangYuk - Aplikasi Jual Beli",
+                category: "Marketplace Mobile",
+                role: "Mobile UI/UX Designer",
+                tools: "Desain UI/UX, Aplikasi Mobile",
+                defaultRole: "seller",
+                roleLabels: {
+                    seller: "🛍️ Penjual",
+                    buyer: "🛒 Pembeli"
+                },
+                roles: {
+                    seller: [
+                        "./assets/dagangyuk_penjual_1.png",
+                        "./assets/dagangyuk_penjual_2.png",
+                        "./assets/dagangyuk_penjual_3.png",
+                        "./assets/dagangyuk_penjual_4.png",
+                        "./assets/dagangyuk_penjual_5.png",
+                        "./assets/dagangyuk_penjual_6.png"
+                    ],
+                    buyer: [
+                        "./assets/dagangyuk_pembeli_1.png",
+                        "./assets/dagangyuk_pembeli_2.png",
+                        "./assets/dagangyuk_pembeli_3.png",
+                        "./assets/dagangyuk_pembeli_4.png",
+                        "./assets/dagangyuk_pembeli_5.png",
+                        "./assets/dagangyuk_pembeli_6.png"
+                    ]
+                },
+                desc: "DagangYuk adalah aplikasi marketplace mobile yang menghubungkan penjual dengan pembeli. Pembeli dapat menjelajahi kategori dan produk, sedangkan penjual memiliki dashboard untuk memantau penjualan, pesanan, serta mengelola produk.",
+                challenge: "Menyajikan alur dan kebutuhan yang berbeda bagi penjual dan pembeli tanpa membuat pengalaman penggunaan aplikasi terasa rumit.",
+                solution: "Membuat tampilan dan alur aplikasi yang disesuaikan untuk masing-masing peran, dengan navigasi yang jelas untuk aktivitas belanja maupun pengelolaan toko.",
+                impact: "Menghasilkan rancangan antarmuka marketplace yang mencakup alur utama pembeli dan penjual, dari menjelajahi produk hingga mengelola toko dan pesanan.",
+                link: "https://github.com/shabrina-septhyan"
+            }
+        };
+
+        function navigateTo(targetPage) {
+            const pageHome = document.getElementById('pageHome');
+            const pageProjects = document.getElementById('pageProjects');
+            const pageSertifikat = document.getElementById('pageSertifikat');
+
+            pageHome.classList.add('hidden');
+            pageProjects.classList.add('hidden');
+            pageSertifikat.classList.add('hidden');
+
+            if (targetPage === 'home') {
+                pageHome.classList.remove('hidden');
+            } else if (targetPage === 'projects') {
+                pageProjects.classList.remove('hidden');
+            } else if (targetPage === 'sertifikat') {
+                pageSertifikat.classList.remove('hidden');
+
+            }
+
+            window.scrollTo({ top: 200, behavior: 'smooth' });
+        }
+
+        let currentActiveImages = [];
+        let currentActiveIndex = 0;
+        let currentProjectData = null;
+        let currentRoleKey = 'customer';
+
+        function getRoleLabel(roleKey) {
+            if (currentProjectData.roleLabels && currentProjectData.roleLabels[roleKey]) {
+                return currentProjectData.roleLabels[roleKey];
+            }
+
+            const defaultLabels = {
+                customer: "📱 Customer",
+                admin: "💻 Admin"
+            };
+            return defaultLabels[roleKey] || roleKey;
+        }
+
+        function changeMainImage(index) {
+            currentActiveIndex = index;
+            const mainImg = document.getElementById('modalMainImage');
+            if (mainImg) {
+                mainImg.src = currentActiveImages[index];
+            }
+        }
+
+        // ================= SWITCH PROJECT ROLE =================
+        function switchRole(roleKey) {
+            currentRoleKey = roleKey;
+            if (currentProjectData && currentProjectData.roles) {
+                currentActiveImages = currentProjectData.roles[roleKey] || [];
+                currentActiveIndex = 0;
+
+                // Update UI Modal Utama
+                const mainImg = document.getElementById('modalMainImage');
+                if (mainImg && currentActiveImages.length > 0) {
+                    mainImg.src = currentActiveImages[0];
+                }
+
+                Object.keys(currentProjectData.roles).forEach((key) => {
+                    const button = document.getElementById(`btnRole-${key}`);
+                    if (button) {
+                        button.className = key === roleKey
+                            ? "px-3 py-1 text-[11px] font-bold rounded-full bg-popPink text-creamBg shadow transition"
+                            : "px-3 py-1 text-[11px] font-bold rounded-full bg-white text-popPink border border-popPink/20 transition hover:bg-softPink/30";
+                    }
+                });
+
+                // Render Ulang Thumbnails
+                const thumbContainer = document.getElementById('thumbContainer');
+                if (thumbContainer) {
+                    thumbContainer.innerHTML = currentActiveImages.map((img, idx) => `
+                        <button onclick="changeMainImage(${idx})" class="flex-shrink-0 w-14 h-14 rounded-xl overflow-hidden border-2 border-popPink/30 hover:border-popPink focus:border-popPink transition shadow-sm bg-slate-50 group">
+                            <img src="${img}" alt="Preview ${idx + 1}" class="w-full h-full object-contain p-1 group-hover:scale-110 transition">
+                        </button>
+                    `).join('');
+                }
+            }
+        }
+
+
+        // ================= POP-UP CARD CAROUSEL 3D LOGIC =================
+        function openCarouselModal(imageList, startIndex = 0) {
+            currentActiveImages = imageList;
+            currentActiveIndex = startIndex;
+
+            // Tampilkan Tab Switcher jika project memiliki roles
+            const roleTab = document.getElementById('carouselRoleTab');
+            if (currentProjectData && currentProjectData.roles) {
+                roleTab.innerHTML = Object.keys(currentProjectData.roles).map((roleKey) => `
+                    <button onclick="switchRoleInCarousel('${roleKey}')" id="cBtnRole-${roleKey}" class="px-4 py-1.5 text-xs font-bold rounded-full ${currentRoleKey === roleKey ? 'bg-softPink text-popPink' : 'bg-white/20 text-white hover:bg-white/30'} transition shadow">
+                        ${getRoleLabel(roleKey)} (${currentProjectData.roles[roleKey].length})
+                    </button>
+                `).join('');
+            } else {
+                roleTab.innerHTML = '';
+            }
+            
+            buildCarouselCards();
+            updateCarouselCards();
+
+            document.getElementById('carouselModal').classList.remove('hidden');
+        }
+
+        function switchRoleInCarousel(roleKey) {
+            switchRole(roleKey);
+            buildCarouselCards();
+            updateCarouselCards();
+
+            Object.keys(currentProjectData.roles).forEach((key) => {
+                const button = document.getElementById(`cBtnRole-${key}`);
+                if (button) {
+                    button.className = key === roleKey
+                        ? "px-4 py-1.5 text-xs font-bold rounded-full bg-softPink text-popPink transition shadow"
+                        : "px-4 py-1.5 text-xs font-bold rounded-full bg-white/20 text-white hover:bg-white/30 transition shadow";
+                }
+            });
+        }
+
+        function closeCarouselModal() {
+            document.getElementById('carouselModal').classList.add('hidden');
+        }
+
+        function buildCarouselCards() {
+            const track = document.getElementById('carouselTrack');
+            track.innerHTML = '';
+
+            currentActiveImages.forEach((imgSrc, idx) => {
+                const card = document.createElement('div');
+                card.className = 'carousel-card w-[240px] sm:w-[270px] h-[450px] bg-white p-2 rounded-3xl shadow-2xl flex items-center justify-center border-4 border-white/20 overflow-hidden';
+                card.id = `carousel-card-${idx}`;
+                card.onclick = () => {
+                    if (idx !== currentActiveIndex) {
+                        currentActiveIndex = idx;
+                        updateCarouselCards();
+                    }
+                };
+
+                card.innerHTML = `
+                    <img src="${imgSrc}" alt="Screenshot ${idx + 1}" class="w-full h-full object-contain rounded-2xl bg-slate-50" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x600?text=Image+Error';">
+                `;
+
+                track.appendChild(card);
+            });
+        }
+
+        function updateCarouselCards() {
+            const total = currentActiveImages.length;
+
+            currentActiveImages.forEach((_, idx) => {
+                const card = document.getElementById(`carousel-card-${idx}`);
+                if (!card) return;
+
+                card.classList.remove('active', 'prev', 'next', 'hidden-card');
+
+                if (idx === currentActiveIndex) {
+                    card.classList.add('active');
+                } else if (idx === (currentActiveIndex - 1 + total) % total && total > 1) {
+                    card.classList.add('prev');
+                } else if (idx === (currentActiveIndex + 1) % total && total > 1) {
+                    card.classList.add('next');
+                } else {
+                    card.classList.add('hidden-card');
+                }
+            });
+
+            // Update Counter
+            document.getElementById('carouselCounter').innerText = total > 0 ? `${currentActiveIndex + 1} / ${total}` : '0 / 0';
+
+            // Hide/Show navigation buttons if <= 1 image
+            const prevBtn = document.getElementById('carouselPrevBtn');
+            const nextBtn = document.getElementById('carouselNextBtn');
+            if (total <= 1) {
+                prevBtn.classList.add('hidden');
+                nextBtn.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+                nextBtn.classList.remove('hidden');
+            }
+        }
+
+        function prevCarousel() {
+            if (currentActiveImages.length <= 1) return;
+            currentActiveIndex = (currentActiveIndex - 1 + currentActiveImages.length) % currentActiveImages.length;
+            updateCarouselCards();
+        }
+
+        function nextCarousel() {
+            if (currentActiveImages.length <= 1) return;
+            currentActiveIndex = (currentActiveIndex + 1) % currentActiveImages.length;
+            updateCarouselCards();
+        }
+
+        // Keyboard Controls
+        document.addEventListener('keydown', (e) => {
+            const carouselModal = document.getElementById('carouselModal');
+            if (!carouselModal.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeCarouselModal();
+                if (e.key === 'ArrowLeft') prevCarousel();
+                if (e.key === 'ArrowRight') nextCarousel();
+            }
+        });
+
+
+        // ================= MODAL PROJECT LOGIC =================
+        function openModal(projectId) {
+            const data = projectsData[projectId];
+            currentProjectData = data;
+            currentRoleKey = data.defaultRole || (data.roles ? Object.keys(data.roles)[0] : 'customer');
+
+            // Cek apakah punya roles terpisah atau images biasa
+            if (data.roles) {
+                currentActiveImages = data.roles[currentRoleKey] || [];
+            } else {
+                currentActiveImages = data.images || [];
+            }
+            currentActiveIndex = 0;
+
+            const modalContent = document.getElementById('modalContent');
+
+            // HTML Tab Role jika project punya fitur Role Switcher
+            let roleSwitchHTML = '';
+            if (data.roles) {
+                roleSwitchHTML = `
+                    <div class="flex items-center gap-2 mb-3 bg-creamBg/80 p-1.5 rounded-full border border-popPink/20 w-fit">
+                        <span class="text-[10px] font-bold text-popPink pl-2">Tampilan UI:</span>
+                        ${Object.keys(data.roles).map((roleKey) => `
+                            <button id="btnRole-${roleKey}" onclick="switchRole('${roleKey}')" class="px-3 py-1 text-[11px] font-bold rounded-full ${currentRoleKey === roleKey ? 'bg-popPink text-creamBg shadow' : 'bg-white text-popPink border border-popPink/20 hover:bg-softPink/30'} transition">
+                                ${getRoleLabel(roleKey)} (${data.roles[roleKey].length})
+                            </button>
+                        `).join('')}
+                    </div>
+                `;
+            }
+
+            // Thumbnails
+            let thumbnailsHTML = `
+                <div id="thumbContainer" class="flex gap-2 mt-3 overflow-x-auto pb-2 border-t border-popPink/10 pt-2">
+                    ${currentActiveImages.map((img, idx) => `
+                        <button onclick="changeMainImage(${idx})" class="flex-shrink-0 w-14 h-14 rounded-xl overflow-hidden border-2 border-popPink/30 hover:border-popPink focus:border-popPink transition shadow-sm bg-slate-50 group">
+                            <img src="${img}" alt="Preview ${idx + 1}" class="w-full h-full object-contain p-1 group-hover:scale-110 transition">
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+
+            const mainImageSrc = (currentActiveImages.length > 0) ? currentActiveImages[0] : '';
+
+            modalContent.innerHTML = `
+                <div class="mb-3 pr-8">
+                    <span class="text-[9px] font-bold bg-popPink text-creamBg px-2.5 py-1 rounded-full uppercase inline-block mb-1">
+                        ${data.category}
+                    </span>
+                    <h3 class="font-display text-xl md:text-2xl font-extrabold text-popPink leading-tight">${data.title}</h3>
+                </div>
+
+                ${roleSwitchHTML}
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start border-t border-popPink/10 pt-4">
+                    
+                    <!-- SISI KIRI: GAMBAR UTAMA (Klik untuk Buka Card Carousel Pop-Up) -->
+                    <div class="md:col-span-5">
+                        <div onclick="openCarouselModal(currentActiveImages, currentActiveIndex)" class="w-full bg-slate-100/80 rounded-2xl overflow-hidden border-2 border-popPink/20 shadow-md p-2 flex items-center justify-center min-h-[300px] cursor-pointer relative group">
+                            <img id="modalMainImage" src="${mainImageSrc}" alt="${data.title}" class="w-full h-auto max-h-[380px] object-contain rounded-xl transition duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x550?text=Foto+Aplikasi';">
+                            
+                            <div class="absolute inset-0 bg-popPink/40 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-bold text-xs transition rounded-2xl gap-1">
+                                📱 Buka Card Carousel
+                            </div>
+                        </div>
+                        
+                        ${thumbnailsHTML}
+                    </div>
+
+                    <!-- SISI KANAN: DETAIL KETERANGAN -->
+                    <div class="md:col-span-7 space-y-4">
+                        
+                        <div class="text-[11px] text-darkText space-y-1 bg-white p-3.5 rounded-2xl border border-popPink/20 shadow-sm">
+                            <p class="flex items-center gap-1.5">
+                                <span>👤</span> <strong>Peran:</strong> <span>${data.role}</span>
+                            </p>
+                            <p class="flex items-center gap-1.5">
+                                <span>🛠</span> <strong>Tools:</strong> <span>${data.tools}</span>
+                            </p>
+                        </div>
+
+                        <div class="space-y-3 text-xs text-darkText/90 leading-relaxed">
+                            <div>
+                                <h5 class="font-bold text-popPink border-b border-popPink/10 pb-0.5 mb-1">Deskripsi Singkat:</h5>
+                                <p class="text-[11px] leading-relaxed">${data.desc}</p>
+                            </div>
+
+                            <div>
+                                <h5 class="font-bold text-popPink border-b border-popPink/10 pb-0.5 mb-1">Tantangan & Solusi:</h5>
+                                <p class="text-[11px]"><strong>Tantangan:</strong> ${data.challenge}</p>
+                                <p class="text-[11px] mt-1"><strong>Solusi:</strong> ${data.solution}</p>
+                            </div>
+
+                            <div>
+                                <h5 class="font-bold text-popPink border-b border-popPink/10 pb-0.5 mb-1">Hasil & Dampak:</h5>
+                                <p class="text-[11px]">${data.impact}</p>
+                            </div>
+
+                            <div class="pt-2 flex justify-end">
+                                <a href="${data.link}" target="_blank" class="bg-popPink text-creamBg text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-softPink hover:text-popPink transition flex items-center gap-2">
+                                    <span>Buka di GitHub</span> ➔
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            `;
+
+            document.getElementById('projectModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+        }
+    </script>
+
+</body>
+</html>
